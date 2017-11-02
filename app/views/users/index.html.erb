@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-2">
+    <h2>Players</h2>
+    <p>Welcome to the [Padel.org] community. Players must fill out a profile in order to be visible in the community to be invited to play.</p>
+    <ul class="list-unstyled">
+      <% @users.each do |user| %>
+        <% if user.profile %>
+        <li>
+          <div class="well row <%= cycle('white-bg', '') %>"" style='width:100%'>
+            <div class="col-sm-4 text-center">
+              <% if user.profile.avatar %>
+                <%= link_to user do %>
+                  <%= image_tag user.profile.avatar.url(:thumb), class: 'user-index-avatar', size:'50x50' %>
+                <% end %>
+              <% end %>
+            </div>
+            
+            <div>
+              <%= link_to user do %>
+                <h4><%= user.profile.first_name %> <%= user.profile.last_name %></h4>
+              <% end %>
+              <h5>
+                <small>Club:</small> <%= user.profile.club %>  
+                <small>Match:</small> <%= user.profile.match_type %>  
+                <small>Ranking:</small> <%= user.profile.ranking_type %>
+                <br/>  
+                <small>From:</small> <%= user.profile.nation %>  
+                <small>Category:</small> <%= user.profile.category %>  
+                <small>Level:</small> <%= user.profile.level %> 
+                <% if user.plan_id == 3 %>
+                  <span class="label label-danger">PREMIUM</span>
+                <% end %>
+              </h5>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

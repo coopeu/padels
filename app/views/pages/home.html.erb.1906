@@ -1,0 +1,93 @@
+<div class="jumbotron text-center">
+	<h2>Facilitating to play padel in Barcelona<BR/> 
+	<!--<I>more than 1000 players and 100 clubs</I>--></h2>
+  <h3>Padel's players can meet other players to play and organise matches.</h3>
+</div>
+<div class="row">
+  <% if user_signed_in? %>
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">Your Profile</h2>
+        <% if current_user.profile %>
+          <%= link_to "Edit your profile", edit_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block' %>
+          <%= link_to "View your profile", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+        <% else %>
+          <p>Create your profile so that you can share your information with the community.</p>
+          <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block'%>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">The players community</h2>
+        <p>Visit the players community to meet others, at your level and next to you!</p>
+        <p>Invite players to matches at one date:hour in a club!</p>
+        <%= link_to "Visit the community", users_path, class: 'btn btn-default btn-lg btn-block' %>
+      </div>
+    </div>
+  <% else %>
+    <div class="col-md-3">
+      <div class="well">
+      <h3 class="text-center"><b>Free Account</b></h3><br/>
+        <h4>
+          <li>Publish your player profile.</li>
+          <li>Participate in The Open Social Ladder.</li>
+          <li>Get invitations to play.</li>
+          <li>Publish your matches & results.</li>
+          <li>Get access to the community.</li>
+          <li>Invite other 25-players only paying 1€.</li>
+        </h4>
+        <br/>
+        <center><strong>Sign up for <big>free!</big></strong></center>
+        <br/>
+        <%= link_to "Sign up", new_user_registration_path(plan: @free_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="well">
+      	<h3 class="text-center"><b>Basic Membership</b></h3><br/>
+        <h4>
+          <li><strong>Become an Associated!</strong></li>
+          <li>Participate in competitive matches.</li>
+          <li>Send freely invitations to other players <small>(less than 25 each time)</small></li>
+          <li>Get your ranking score & more visibility to be invited.</li>
+          <li><strong>Get offers & discounts!</strong></li>
+          </h4>
+            <br/>
+            <center><strong>Sign up for only<big> 3€ </big>per month</strong></center>
+            
+        <br/>
+        <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="well">
+      <h3 class="text-center"><strong>Pro Membership</strong></h3><br/>
+        <h4>
+          <li>Publish your training, shop, club, championship,... profile</li>
+          <li>Get wide visibility at the website.</li>
+          <li>Publish your offers and Ads in well-visible web-places <small>(affordable budgets).</small></li>
+          <li>Be contacted directly by players.</li>
+          <li>Personalise your advertising campaigns in our newsletters and notifications <small>(affordable budgets).</small></li>
+        </h4>
+          <br/>
+          <center><strong>Sign up for only<big> 6€</big> per month</strong></center>
+          <br/>
+        <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+      </div>
+    </div>
+        <div class="col-md-3">
+      <div class="well">
+      <h3 class="text-center"><strong>Premium Membership</strong></h3><br/>
+        <h4><li>Get more than the pro-account advantages.</li>
+        <li>Publish your Ads in well-visible web-places.</li> 
+        <li>Personalise your advertising campaigns in our newsletters and notifications.</li> 
+      </h4>
+      <br/>
+      <center><strong>All for only<big> 12€ </big>per month.</strong></center>
+      <br/>
+        <%= link_to "Sign up with Premium",new_user_registration_path(plan: @premium_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+      </div>
+    </div>
+  <% end %>
+</div>

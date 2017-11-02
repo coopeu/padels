@@ -1,0 +1,56 @@
+<h4><b>List of your padel's players groups</b></h4>
+
+<div class='col-md-6'>
+  <div class='well'>
+ <p class="text-sd-left text-justify"> List of your padel's players groups, acting as leader and owber or as follower member. You can send messages and invitations to this groups. Ypou can create new groups, selecting member of your club or your local common players for facilitating your communications.
+ </p>
+ </div><!-- well -->
+</div><!-- md-6 -->  
+<div class='col-md-6'>  
+<div class='well' style='height:300px'>
+    <form>
+    <div class='col-md-3' style='width:70%'>
+      <b>Name:</b>&nbsp; <input type="text" name="name" size='25' value='name of the new group' type='text'>
+  <p><br/></p>
+  <table style='margin-top:25px; padding-top:25px;'>
+    <tr><td style='margin-top:25px;'><b>Description:</b></td></tr>
+    <tr><td><textarea cols="80" rows='6' name="description"></textarea></td></tr>
+  </table>
+</small>
+     <p class="text-sd-left text-justify" style='margin-top:5px;'><%= link_to 'Create a New Group', groups_new_path, class:'btn btn-success pull-right btn-space-left' %>
+     </p>
+   </form>
+ </div><!-- row -->
+  </div><!-- well -->
+</div><!-- md-6 -->
+
+
+    <%# if @matchs.exists? %>  
+    <table class='table table-striped' style='font-size:11px;'>
+      <tr>
+        <th>Name</th>
+        <th>Administrator</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+<%# @matchs.each do |match| %>
+      <tr>
+      <td><%#= match.court %>CN Montjuïc Padelers</td>
+      <td><%#= match.player3 %><a href='http://padels.org/users/2'>John</a><%#= match.player4 %></td>
+      <td><%#= match.description %>Grup of members that practice padel at CN Montjuic.</td>
+      <td><%#= match.description %>Send a message</td>
+      </tr>
+      <%# end %>
+  <tr>
+      <td><%#= match.court %>Padel in Montjuïc</td>
+      <td><%#= match.player1 %><a href='http://padels.org/users/4'>Oscar</a><%#= match.player2 %></td>
+      <td><%#= match.description %>Padel players that play padel in Montjuïc mountaine: Picornell, CN, Pompeia,...</td>
+      <td><%#= match.description %>Send a message</td>
+      </tr>
+    </table>
+      <%#= will_paginate @matchs %>
+    <%# else %>
+    <P><small> This are examples of unofficial formed groups.</small></P>
+   <%# end %>
+
+</div>

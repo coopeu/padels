@@ -1,0 +1,53 @@
+/* line 1, /var/www/html/socialpadel/app/assets/stylesheets/padels.css.scss */
+#problem {
+  margin-right: auto;
+  margin-left: auto;
+  /*what ever other styles*/
+}
+
+/* line 2, /var/www/html/socialpadel/app/assets/stylesheets/padels.css.scss */
+#enclose {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+/**.pull-right{margin-left:5; padding-left:5;}**/
+/* line 6, /var/www/html/socialpadel/app/assets/stylesheets/padels.css.scss */
+.btn-space-right {
+  margin-right: 5px;
+}
+
+/* line 7, /var/www/html/socialpadel/app/assets/stylesheets/padels.css.scss */
+.btn-space-left {
+  margin-left: 5px;
+}
+
+/* line 10, /var/www/html/socialpadel/app/assets/stylesheets/padels.css.scss */
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* line 19, /var/www/html/socialpadel/app/assets/stylesheets/padels.css.scss */
+.navbar-toggle {
+  z-index: 3;
+}
+
+/**
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cfd2da;
+  background-color: #252830;
+}
+**/
+/* line 32, /var/www/html/socialpadel/app/assets/stylesheets/padels.css.scss */
+ul.nav a:hover {
+  color: #000 !important;
+}

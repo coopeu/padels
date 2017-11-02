@@ -1,0 +1,36 @@
+<h1>List of Meetings</h1>
+<p>List of upcoming social and competitive meetings (Social meetings, American tournaments, competitions, championships,...), including: Date, Hours, Court, Categories, Organisation, Prizes, Contact details,...</p>
+
+<div class='well'>
+  
+     <h2 class='page-header'>Publish a meeting <%= link_to 'New meeting', new_contact_path, class:'btn btn-success pull-right' %> </h2>
+
+    <%# if @matchs.exists? %>  
+    <table class='table table-striped'>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Hours</th>
+        <th>Court</th>
+        <th>Organisation</th>
+        <th>Description</th>
+        <th>Contact</th>
+      </tr>
+<%# @matchs.each do |match| %>
+      <tr>
+      <td><%#= match.date %></td>
+      <td><%#= match.court %></td>
+      <td><%#= match.player1 %> + <%#= match.player2 %></td>
+      <td><%#= match.player3 %> + <%#= match.player4 %></td>
+      <td><%#= match.set1 %> , <%#= match.set2 %> , <%#= match.set3 %></td>
+      <td><%#= match.description %></td>
+      </tr>
+      <%# end %>
+
+    </table>
+      <%#= will_paginate @matchs %>
+    <%# else %>
+    <P> There are not meetings still</P>
+   <%# end %>
+
+</div>

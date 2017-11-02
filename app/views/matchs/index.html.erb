@@ -1,0 +1,62 @@
+<h4><b>List of Played and invitation to upcoming Matches</b></h4>
+
+<div class='col-md-6'>
+  <div class='well'>
+ <p class="text-sd-left text-justify"> List of chronological competitive matches played or played matched of 'The Open Social Ladder'. After playing a match one player will publish the results of the competitive match, including: Date, Court, Players, Scores of competitive matches, some comments,... in order to be counted and shared. The number of matches and results (competitive matches) and the comments will branded you and attract other players to invite you to play.
+ </p>
+ </div><!-- well -->
+</div><!-- md-6 -->  
+<div class='col-md-6'>  
+  <div class='well'>
+     <p class="text-sd-left text-justify"><%= link_to 'Score a played match', new_contact_path, class:'btn btn-success pull-right btn-space-left' %>
+    
+     </p>
+  </div><!-- well -->
+</div><!-- md-6 -->
+
+
+<div class="row">
+  <div class="col-md-1">Date</div>
+  <div class="col-md-1">Court</div>
+  <div class="col-md-2">First pair</div>
+  <div class="col-md-2">Second Pair</div>
+  <div class="col-md-2">Score</div>
+  <div class="col-md-4">Comments</div>
+</div>
+
+
+    <%# if @matchs.exists? %>  
+    <table class='table table-striped' style='font-size:11px;'>
+      <tr>
+        <th>Date</th>
+        <th>Court</th>
+        <th>First pair</th>
+        <th>Second pair</th>
+        <th>Score</th>
+        <th>Comments</th>
+      </tr>
+<%# @matchs.each do |match| %>
+      <tr>
+      <td><%#= match.date %>20-07-2016</td>
+      <td><%#= match.court %>CN Montjuïc or BCN</td>
+      <td><%#= match.player1 %>? + ?<%#= match.player2 %></td>
+      <td><%#= match.player3 %><a href='http://padels.org/users/3'>Maria Jose</a> + <a href='http://padels.org/users/2'>John</a><%#= match.player4 %></td>
+      <td><%#= match.set1 %> 0-0, 0-0 , 0-0</td>
+      <td><%#= match.description %>Preferably at the evening >19:00 in anywhere BCN, competitive match and Level 4-5. Contact <a href='http://padels.org/users/2'>me </a>before next Monday.</td>
+      </tr>
+      <%# end %>
+  <tr>
+      <td><%#= match.date %>20-06-2016</td>
+      <td><%#= match.court %>CN Montjuïc</td>
+      <td><%#= match.player1 %><a href='http://padels.org/users/1'>Ferran</a> + <a href='http://padels.org/users/4'>Oscar</a><%#= match.player2 %></td>
+      <td><%#= match.player3 %><a href='http://padels.org/users/3'>Maria Jose</a> + <a href='http://padels.org/users/2'>John</a><%#= match.player4 %></td>
+      <td><%#= match.set1 %> 6-4, 3-6, 6-4</td>
+      <td><%#= match.description %>Very very close game in a sunny day. The services were deciduous for breaking the equilibrated pairs.</td>
+      </tr>
+    </table>
+      <%#= will_paginate @matchs %>
+    <%# else %>
+    <P><small> This are examples of invitations and played matches because there aren't official matches still.</small></P>
+   <%# end %>
+
+</div>

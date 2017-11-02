@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h1 class="text-center">Contact Us</h1>
+    <p class="text-center">Reach out if you have any questions or comments.</p>
+    <div class="well">
+      <%= form_for @contact do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :comments %>
+          <%= f.text_area :comments, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Submit', class: 'btn btn-default' %>
+      <% end %>
+      <p><BR/></p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d160941.03018739476!2d2.125505837067546!3d41.44999568997001!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sca!2ses!4v1465557828288" width="330" height='330' frameborder="0" style="border:0" allowfullscreen></iframe>
+	<p><BR/></p>
+		<%#= image_tag("MUFICATA100.png", size: '150x28', alt: "MUFIACAT RTDI SL") %>
+		<p></p>
+ 		<h3>MUFICATA RTDI S.L.</h3>
+ 		<h4 style='text-size:9px'>CIF: B-61421830<BR/>
+ 			Address:12 Jaume Fabra<BR/> 08004 Barcelona<BR/>
+  		Web: <%= link_to('www.muficata.net', 'http://MUFICATA.NET') %><BR/>
+ 		Email: <%= mail_to "info@MUFICATA.net", "InfoATmuficataDOTnet", :encode => "hex" %>
+ 		</h4>
+    </div>
+  </div>
+</div>

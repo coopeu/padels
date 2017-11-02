@@ -1,0 +1,36 @@
+#problem {margin-right:auto;margin-left:auto; /*what ever other styles*/}
+#enclose {position:fixed;bottom:0px;width:100%;}
+
+/**.pull-right{margin-left:5; padding-left:5;}**/
+
+.btn-space-right {margin-right: 5px;}
+.btn-space-left {margin-left: 5px;}
+
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin:0 auto;
+}
+.navbar-toggle {
+    z-index:3;
+}
+.navbar-btn {
+  font-size:12px;
+  font-weight:bold;
+}
+
+/**
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cfd2da;
+  background-color: #252830;
+}
+**/
+ul.nav a:hover { color: #000 !important; }

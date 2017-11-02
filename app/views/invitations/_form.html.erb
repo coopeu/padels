@@ -1,0 +1,69 @@
+<%= form_for @profile, url: user_profile_path, 
+:html => { :multipart => true } do |f| %>
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :club %>
+    <%= f.text_field :club, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%#= f.label :ranking_type %>
+    <%#= f.select :ranking_type, Ranking_type.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select one'}, class:'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= radio_button_tag(:gender, 'Female') %><%= label_tag(:gender, "Female") %>
+  <%= radio_button_tag(:gender, 'Male') %><%= label_tag(:gender, "Male") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :match_type %>
+   <%= f.select :match_type, Match_type.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select one'}, class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: 'form-control' %>
+    <%= f.select :category, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select one'}, class:'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :level %>
+    <%= f.text_field :level, class: 'form-control' %>
+    <%= f.select :level, Level.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select one'}, class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :score_wins %>
+    <%= f.text_field :score_wins, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :score_plays %>
+    <%= f.text_field :score_plays, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :nation %>
+    <%= f.text_field :nation, class: 'form-control' %>
+    <%= f.select :nation, Nation.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select one'}, class:'form-control' %>   
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_email %>
+    <%= f.text_field :contact_email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+  </div>
+<% end %>

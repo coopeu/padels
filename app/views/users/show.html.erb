@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-3 text-center">
+    <%= image_tag @user.profile.avatar.url, class: 'user-show-avatar', size:'150x150' %>
+  </div>
+  <div class="col-md-6">
+    <h2><%= @user.profile.first_name %> <%= @user.profile.last_name %></h2>
+    <h4>
+    <span class="profile-category">Category: <strong><%= @user.profile.category %></strong> | </span><span class="profile-level">Level:</span><strong> <%= @user.profile.level %></strong> | Score: <strong><%= @user.profile.score_wins %> / <%= @user.profile.score_plays %></strong><BR/>
+    </h4>
+    <h5>
+    <span class="profile-club">Playing at club: <strong><%= @user.profile.club %></strong></span><br/>
+    <span class="profile-match">Is <strong><%= @user.profile.gender %></strong> and like to play: <strong><%= @user.profile.match_type %></strong></span>
+    <span class="profile-ranking"> in the <strong><%= @user.profile.ranking_type %></strong></span><BR/>
+    <span class="profile-nation"></span>From: <strong><%= @user.profile.nation %></strong>
+    </h5>
+    <div class="well profile-block profile-description">
+      <h4>Description</h4>
+      <%= @user.profile.description %>
+    </div>
+    
+    <% if current_user.plan_id == 3 %>
+      <div class="well profile-block contact-info">
+        <h3>Contact Info</h3>
+        <%= @user.profile.phone_number %><br/>
+        <%= @user.profile.contact_email %><br/>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

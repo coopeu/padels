@@ -1,0 +1,53 @@
+<nav class="navbar navbar-static-top nav-bordered navbar-collapse" id="main-nav-collapse" role="navigation">
+  <div class='container'>
+
+    <div class="navbar-header navbar-left" style='align:left; margin:0;'>
+      <%= link_to root_path, class: 'navbar-brand' do %>
+         <img src='/images/SocialPadel.org300.png' alt:'Facilitating Pàdel in Barcelona', style='float:left; margin-left:10px; height:40px;'/>
+      <% end %>
+    </div><!-- ./navbar-left -->
+
+    <ul class="nav navbar-nav navbar-right" style='margin:'0px'>
+        <%# if user_signed_in? %>
+        <li style='font-weight: bold;font-size:'16px'><%= link_to "Players", players_path %></li>
+        <li style='font-weight: bold;font-size:'16px'><%= link_to "Matches", matchs_index_path %></li>
+        <li style='font-weight: bold;font-size:'16px'><%= link_to "Invitations", invitations_index_path %></li>
+        <%# end %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+
+<li style='font-weight: bold;'><a href='/courts#index'>Courts</a></li>
+<li style='font-weight: bold;'><a href='/meetings#index'>Meetings</a></li>
+<li style='font-weight: bold;'><a href='/trainers#index'>Trainers</a></li>
+<li style='font-weight: bold;'><a href='/shops#index'>Shops</a></li>
+<li style='font-weight: bold;'><a href='/offers#index'>Offers</a></li>
+<li role="separator" class="divider"></li>
+<li><%= link_to "Rules", rules_path %></li>
+<li><%= link_to "Levels", levels_path %></li>
+<li role="separator" class="divider"></li>
+<li><%= link_to "About us", about_path %></li>
+
+              </ul>
+            </li><!-- ./dropdown -->
+
+        <li style='font-weight: bold;font-size:14px'><%= link_to "Contact Us", new_contact_path %></li>
+
+       <% if user_signed_in? %>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+        <ul class="dropdown-menu">        
+        <li style='font-weight: bold;font-size:16px'><%= link_to "My Profile", edit_user_registration_path %></li>
+        <li style='font-weight: bold;font-size:16px'><%= link_to "My Groups", groups_index_path %></li>
+        </ul>
+        </li><!-- ./dropdown -->
+       <li style='font-weight: bold;font-size:12px'><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %></li>
+        <% else %>
+       <li style='font-weight: bold;font-size:12px'><%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %></li>
+        <% end %>
+
+	</ul><!-- .7navbar-right -->
+
+
+</div><!-- container -->
+</nav><!-- /.navbar-static-top -->

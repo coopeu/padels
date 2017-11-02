@@ -1,0 +1,82 @@
+<h4><b>List of Played Matches</b></h4>
+
+<div class='col-md-6'>
+  <div class='well'>
+ <p class="text-sd-left text-justify"> Chronological list of played matches in the 'competitive' way (with winners) or in the 'Open Social Ladder' (only counting number of played matches). After playing a match one player, generally the match-organiser, will publish the results of the competitive match, including: Date, Court, Players, Scores of competitive matches (sets results), and important some friendly comments,... in order to be counted and shared. Your number of played matches and your results (competitive matches) will branded you (ordered lists) and attract other players to invite you to play and join their padel's players groups.
+ </p>
+ </div><!-- well -->
+</div><!-- md-6 -->  
+<div class='col-md-6'>  
+<div class='well' style='height:300px'>
+    <form><small>
+    <div class='col-md-3' style='width:70%'>
+      <b>Date:</b>&nbsp; <input type="text" name="date" size='6' value='dd:mm:yy' type='date'>
+      &nbsp;&nbsp;&nbsp;&nbsp;<b>Court:</b><small><input type="text" name="dd" size='15' value='court or club name'></small>
+        <p><b>Match type:</b><small>
+    &nbsp;<input type="checkbox" name="MatchType" value="FEMALE"> Female  
+    &nbsp;<input type="checkbox" name="MatchType" value="MALE"> Male  
+    &nbsp;<input type="checkbox" name="MatchType" value="MIX" checked="checked"> Mix  
+    &nbsp;<input type="checkbox" name="MatchType" value="FMP"> Female-Male pairs  
+  </small></p>
+    <p><b>Ranking type:</b><small>
+    &nbsp;<input type="checkbox" name="RankingType" value="OSL" checked="checked"> "Open Social Ladder"  
+    &nbsp;<input type="checkbox" name="RankingType" value="COM"> Competitive match
+  </small></p>     
+  <b>Pair 1:</b>&nbsp;<small> Player 1:<input type="text" name="player1" size='7'>&nbsp; Player 2:<input type="text" name="palyer2" size='7'></small><br>
+  <b>Pair 2:</b>&nbsp;<samll> Player 3:<input type="text" name="player3" size='7'>&nbsp; Player 4:<input type="text" name="palyer4" size='7'></samll><br>
+  </div><!-- col-3 -->
+  <div class='col-md-3' style='width:30%'>
+  <b>Results:</b><br/>
+  &nbsp;Set 1:<input type="text" name="set11" size='1'>&nbsp;-&nbsp; <input type="text" name="set12" size='1'><br/>
+  &nbsp;Set 2:<input type="text" name="set21" size='1'>&nbsp;-&nbsp; <input type="text" name="set22" size='1'><br/>
+  &nbsp;Set 3:<input type="text" name="set31" size='1'>&nbsp;-&nbsp; <input type="text" name="set32" size='1'><br/>
+  </div><!-- col-3 -->
+  <p><br/></p>
+  <table style='margin-top:25px; padding-top:25px;'>
+    <tr><td style='margin-top:25px;'><b>Match comments:</b></td></tr>
+    <tr><td><textarea cols="80" rows='4' name="message"></textarea></td></tr>
+  </table>
+</small>
+     <p class="text-sd-left text-justify" style='margin-top:5px;'><%= link_to 'Score a played match', new_contact_path, class:'btn btn-success pull-right btn-space-left' %>
+     </p>
+   </form>
+ </div><!-- row -->
+  </div><!-- well -->
+</div><!-- md-6 -->
+
+
+    <%# if @matchs.exists? %>  
+    <table class='table table-striped' style='font-size:11px;'>
+      <tr>
+        <th>Date</th>
+        <th>Court</th>
+        <th>First pair</th>
+        <th>Second pair</th>
+        <th>Score</th>
+        <th>Comments</th>
+      </tr>
+<%# @matchs.each do |match| %>
+      <tr>
+      <td><%#= match.date %>20-07-2016</td>
+      <td><%#= match.court %>CN Montjuïc or BCN</td>
+      <td><%#= match.player1 %>? + ?<%#= match.player2 %></td>
+      <td><%#= match.player3 %><a href='http://padels.org/users/3'>Maria Jose</a> + <a href='http://padels.org/users/2'>John</a><%#= match.player4 %></td>
+      <td><%#= match.set1 %> 0-0, 0-0 , 0-0</td>
+      <td><%#= match.description %>Preferably at the evening >19:00 in anywhere BCN, competitive match and Level 4-5. Contact <a href='http://padels.org/users/2'>me </a>before next Monday.</td>
+      </tr>
+      <%# end %>
+  <tr>
+      <td><%#= match.date %>20-06-2016</td>
+      <td><%#= match.court %>CN Montjuïc</td>
+      <td><%#= match.player1 %><a href='http://padels.org/users/1'>Ferran</a> + <a href='http://padels.org/users/4'>Oscar</a><%#= match.player2 %></td>
+      <td><%#= match.player3 %><a href='http://padels.org/users/3'>Maria Jose</a> + <a href='http://padels.org/users/2'>John</a><%#= match.player4 %></td>
+      <td><%#= match.set1 %> 6-4, 3-6, 6-4</td>
+      <td><%#= match.description %>Very very close game in a sunny day. The services were deciduous for breaking the equilibrated pairs.</td>
+      </tr>
+    </table>
+      <%#= will_paginate @matchs %>
+    <%# else %>
+    <P><small> This are examples of invitations and played matches because there aren't official matches still.</small></P>
+   <%# end %>
+
+</div>

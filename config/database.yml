@@ -1,0 +1,27 @@
+development:
+  host: localhost
+  adapter: mysql2
+  encoding: utf8
+  database: RoR_padels_dev
+  pool: 5
+  username: spo
+  password: socialpadelorg01
+  socket: /var/run/mysqld/mysqld.sock
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: RoR_padels_test
+  pool: 5
+  username: spo
+  password: socialpadelorg01
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: RoR_padels
+  pool: 5
+  username: spo
+  password: socialpadelorg01
+  socket: /var/run/mysqld/mysqld.sock

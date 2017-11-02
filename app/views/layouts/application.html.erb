@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<%= render 'layouts/partials/head' %>
+
+</head>
+<body>
+<!-- style='font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cfd2da;
+  background-color: #252830;' -->
+
+<%= render 'layouts/partials/topnavbar' %>
+
+  <section>
+    <div class='container'>
+      <div class='row'>
+
+<%= render 'layouts/partials/alerts' %>
+
+<!-- main -->
+  <%= yield %>
+
+    </div><!-- row -->
+  </div><!-- container -->
+</section>
+
+  <footer>
+      <%= render 'layouts/partials/footer' %>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Players</h2>
+    <p>Welcome to the [Padel.org] community. Players must fill out a profile in order to be visible in the community to be invited to play.</p>
+
+
+   <table class='table table-striped' style='font-size:10px; width:100%;'>
+      <tr>
+        <th></th>
+        <th>Full Name</th>
+        <th>Level</th>
+        <th>Category</th>
+        <th>Score</th>
+        <th>Club</th>
+        <th>Like</th>
+        <th>Leader</th>
+        <th>Nation</th>
+      </tr>
+      <% @users.each do |user| %>
+        <% if user.profile %>
+      <tr>
+        <td><% if user.profile.avatar %>
+                <%= link_to user do %>
+                  <%= image_tag user.profile.avatar.url(:thumb), class: 'user-index-avatar', size:'30x30' %>
+                <% end %>
+              <% end %>
+        </td>            
+        <td><%= link_to user do %>
+          <h6><strong><%= user.profile.first_name %> <%= user.profile.last_name %></strong></h6>
+        </td>
+        <td><b><%= user.profile.level %></b></td> 
+        <td><b><%= user.profile.category %></b></td>
+        <td><b><%= user.profile.score_wins %> / <%= user.profile.score_plays %></b></td>
+            <td><%= user.profile.club %></td>  
+            <td><%= user.profile.match_type %></td>
+            <td><%= user.profile.ranking_type %></td>
+            <td><%= user.profile.nation %></td>
+        </td>
+           <% end %>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>
